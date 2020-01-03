@@ -1,10 +1,10 @@
 from string import punctuation
 import random
 
-with open('resources/war_peace.txt') as f:
-    text = f.read()
+with open('resources/speeches.txt') as f:
+    text = f.read().replace('\n',' ')
 
-text = text.translate(str.maketrans('','',punctuation)).replace('`','',).lower()
+text = text.translate(str.maketrans('','',punctuation)).replace('','',)
 words = text.split()
 # print(words[100:400])
 
@@ -42,7 +42,7 @@ def generate_phrase(markov, phrase_len, gram_size):
 markov = generate_markov(words, 3)
 phrase = generate_phrase(markov, 10, 3)
 
-print((phrase))
+print((' '.join(phrase)))
 # print(markov[('honeymoons',)])
 
 
