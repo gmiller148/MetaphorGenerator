@@ -14,11 +14,12 @@ for tag in soup.find_all('strong'):
     t = tag.get_text()
     t = t.replace(' -','')
     t = t.replace('\xa0','')
+    t = t.lower()
     terms.add(t)
 
 terms.remove('-- 1, 2, 3-')
 terms.remove('')
-alpha = 'ABCDEFGHIJKLMNOPQRSTUVWZ'
+alpha = 'ABCDEFGHIJKLMNOPQRSTUVWZ'.lower()
 for letter in list(alpha):
     terms.remove(f'-- {letter}-')
 print(terms)
