@@ -1,3 +1,6 @@
+import requests
+
+url = 'https://www.basketballforcoaches.com/basketball-terms/'
 
 
 
